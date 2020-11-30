@@ -7,25 +7,47 @@
     
 
     <style>
-       
-
-       h2{
-            display: block;
+     
+ 
+       .header,.section{
+        display: block;
             margin-left: auto;
             margin-right: auto;
-            width: 50%;
-       }
+            width: 50%; 
+          background-color: yellow;
+          margin-top: 2rem;
+          margin-bottom: 2rem;
+          border: 2px solid rgb(202, 202, 5);
+        }
 
-        .btn{
-            display: block;
+        .header .header-heading{
+            padding-top: 12px;
+            padding-left: 12px;
+        }
+
+        .header .header-para,.section .section-heading{
+            padding-top: 12px;
+            padding-left: 12px;
+        }
+
+        
+
+        .section .section-btn{
+           
+            padding: 0.3rem;
+            border: 1px solid black;
             margin-top: 1rem;
-            padding: 0.2rem;
-            margin: 0.9rem;
-            
-            margin-left: auto;
+            margin-left: 1rem;
             margin-right: auto;
             width: 7rem;
+            outline: none;
+            
         }
+
+        .section .section-btn:hover{
+            opacity: 0.8;
+        }
+
         .output,.textarea{
             border: 1px solid black;
             height: 9rem;
@@ -41,14 +63,19 @@
 </head>
 <body>
    
-
-    <h2>Talk banana</h2>
+    <div class="header">
+    <h2 class="header-heading">Talk banana</h2>
+    <p class="header-para">write in the box to translate 👇</p>
+    </div>
     <textarea placeholder="write here to translate"  class="textarea"></textarea>
-    <button class="btn">Translate</button>
-
-    <h2>Output will come here 👇</h2>
+    <div class="section">
+    <button class="section-btn">Translate</button>
+    <p class="section-heading">Output will come here 👇</p>
+    </div>
     <div class="output"></div>
+    <div class="footer">
 
+    </div>
     
     
 

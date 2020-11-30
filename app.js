@@ -1,32 +1,24 @@
-var button = document.querySelector(".btn");
+var button = document.querySelector(".section-btn");
 var textarea = document.querySelector(".textarea");
 var output = document.querySelector(".output");
 
-var link = 	"https://api.funtranslations.com/translate/minion.json";
 
-function makeUrl(text){
-    return link + "?" + "text=" + text
+function error(){
+    alert("yup we are sorry!! try after an hour")
 }
 
-function Error(){
-    alert("server not found")
+function btnclick(){
+fetch(`https://api.funtranslations.com/translate/minion.json?text=${textarea.value}`)
+.then(response=>response.json())
+.then(value=>{
+    output.innerText=value.contents.translated
+})
+.catch(error)
 }
+button.addEventListener("click", btnclick)
 
 
-function btnClick(){
-    var textValue = textarea.value
-    fetch(makeUrl(textValue))
-    .then(response=>response.json())
-    .then(value=>{
-        var outputText=value.contents.translated
-        output.innerText = outputText
-        console.log(value.contents.translated)
-    })
-    .catch(Error)
 
-}
-
-button.addEventListener("click", btnClick)
 
 
 
